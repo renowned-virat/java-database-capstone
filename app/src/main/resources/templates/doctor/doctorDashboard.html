@@ -1,5 +1,120 @@
 <!-- doctorDashboard.html -->
+<!-- doctorDashboard.html -->
 
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Favicon -->
+    <link rel="icon"
+          type="image/png"
+          th:href="@{/assets/images/logo/logo.png}">
+
+    <!-- Page Title -->
+    <title>Doctor Dashboard</title>
+
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet"
+          th:href="@{/css/adminDashboard.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/doctorDashboard.css}">
+
+    <link rel="stylesheet"
+          th:href="@{/css/style.css}">
+
+    <!-- Common JavaScript Files -->
+    <script th:src="@{/js/render.js}" defer></script>
+    <script th:src="@{/js/util.js}" defer></script>
+    <script th:src="@{/js/header.js}" defer></script>
+    <script th:src="@{/js/footer.js}" defer></script>
+
+    <!-- Doctor Dashboard JavaScript -->
+    <script
+        type="module"
+        th:src="@{/js/doctorDashboard.js}"
+        defer>
+    </script>
+
+</head>
+
+<body onload="renderContent()">
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Page Wrapper -->
+        <div class="wrapper">
+
+            <!-- Header -->
+            <div id="header"></div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+
+                <!-- Search Bar -->
+                <input
+                    type="text"
+                    id="searchBar"
+                    class="searchBar"
+                    placeholder="Search Bar for custom output">
+
+                <!-- Filter Controls -->
+                <div class="filter-controls">
+
+                    <!-- Today's Appointments -->
+                    <button
+                        id="todayButton"
+                        type="button">
+                        Today's Appointments
+                    </button>
+
+                    <!-- Date Picker -->
+                    <input
+                        type="date"
+                        id="datePicker">
+
+                </div>
+
+                <!-- Patient Table -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Patient ID</th>
+                                <th>Name</th>
+                                <th>Phone No.</th>
+                                <th>Email</th>
+                                <th>Prescription</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="patientTableBody">
+                            <!-- Patient data will be inserted dynamically -->
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+            <!-- Footer -->
+            <div id="footer"></div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
 <!-- 
 Step-by-Step Explanation of `doctorDashboard.html`
 This file defines the Doctor Dashboard interface, allowing doctors to view and manage their patient appointments, search records, and access patient prescriptions.
